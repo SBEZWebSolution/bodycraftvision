@@ -12,7 +12,7 @@ export function Training() {
         <div className="relative">
           <RevealImage
             src={gymImages.equipment}
-            alt="Barbell loaded with iron plates at Body Craft gym"
+            alt="PUSH YOUR LIMITS mural on the Body Craft gym floor"
             width={1400}
             height={1000}
             className="aspect-16/10 w-full md:aspect-21/9"
