@@ -89,16 +89,15 @@ export function Hero() {
             </MagneticButton>
           </div>
 
-          <dl className="flex gap-10">
-            <div>
-              <dt className="eyebrow">Hours</dt>
-              <dd className="display mt-2 text-2xl">{business.hoursShort}</dd>
-            </div>
-            <div>
-              <dt className="eyebrow">Open</dt>
-              <dd className="display mt-2 text-2xl">Daily</dd>
-            </div>
+          <dl className="flex flex-wrap gap-8 md:gap-10">
+            {schedule.map((s) => (
+              <div key={s.window}>
+                <dt className="eyebrow">{s.audience}</dt>
+                <dd className="display mt-2 text-xl md:text-2xl">{s.window}</dd>
+              </div>
+            ))}
           </dl>
+
         </motion.div>
       </motion.div>
 
