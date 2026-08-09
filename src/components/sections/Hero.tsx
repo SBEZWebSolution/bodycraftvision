@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useReducedMotion } from "motion/react";
 import { ArrowDown } from "lucide-react";
-import { business, gymImages } from "@/lib/site";
+import { business, gymImages, heroVideo, schedule } from "@/lib/site";
 import { MagneticButton } from "../MagneticButton";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
