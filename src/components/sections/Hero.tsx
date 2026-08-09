@@ -25,19 +25,27 @@ export function Hero() {
       ref={ref}
       className="grain relative flex min-h-[100svh] flex-col justify-end overflow-hidden"
     >
-      <motion.div className="absolute inset-0" style={{ y: imgY, scale: imgScale }}>
-        <motion.img
-          src={gymImages.hero}
-          alt="The training floor at Body Craft gym in Rahim Yar Khan"
-          width={1920}
-          height={1200}
+      <motion.div
+        className="absolute inset-0"
+        style={{ y: imgY, scale: imgScale }}
+        initial={reduce ? { opacity: 0 } : { opacity: 0, scale: 1.12 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 2.2, delay: 1.1, ease: EASE }}
+      >
+        <video
+          src={heroVideo}
+          poster={gymImages.hero}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-label="Training floor footage at Body Craft gym in Rahim Yar Khan"
           className="h-full w-full object-cover"
-          initial={reduce ? { opacity: 0 } : { opacity: 0, scale: 1.18 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 2.2, delay: 1.1, ease: EASE }}
         />
         <div className="absolute inset-0 cine-veil" />
       </motion.div>
+
 
       <motion.div
         style={{ y: textY, opacity: fade }}
