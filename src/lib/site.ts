@@ -82,7 +82,7 @@ export const gymImages = {
   hero: gym1.url,
   interior01: gym4.url,
   interior02: gym1.url,
-  equipment: gym4.url,
+  equipment: gym3.url,
   training: gym2.url,
   detail: gym3.url,
 } as const;
