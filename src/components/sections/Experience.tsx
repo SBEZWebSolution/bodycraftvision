@@ -7,7 +7,7 @@ const slides = [
   { n: "01", label: "Train", src: galleryImages[0], alt: "Dumbbell and weight plate racks on the Body Craft gym floor" },
   { n: "02", label: "Focus", src: galleryImages[1], alt: "Benches and resistance machines at Body Craft" },
   { n: "03", label: "Push", src: galleryImages[2], alt: "Bench press station and machines at Body Craft" },
-  { n: "04", label: "Progress", src: galleryImages[3], alt: "Member locker wall at Body Craft" },
+  { n: "04", label: "Progress", src: galleryImages[3], alt: "PUSH YOUR LIMITS mural on the Body Craft gym floor" },
 ];
 
 

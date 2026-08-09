@@ -38,7 +38,7 @@ export function Intro() {
         <div className="lg:col-span-6 lg:col-start-8">
           <RevealImage
             src={gymImages.interior01}
-            alt="Dumbbell racks on the Body Craft training floor"
+            alt="PUSH YOUR LIMITS mural on the Body Craft gym floor"
             width={1200}
             height={1500}
             className="aspect-3/4 w-full"
