@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useReducedMotion } from "motion/react";
 import { ArrowDown } from "lucide-react";
-import { business, gymImages } from "@/lib/site";
+import { business, gymImages, heroVideo, schedule } from "@/lib/site";
 import { MagneticButton } from "../MagneticButton";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -25,19 +25,27 @@ export function Hero() {
       ref={ref}
       className="grain relative flex min-h-[100svh] flex-col justify-end overflow-hidden"
     >
-      <motion.div className="absolute inset-0" style={{ y: imgY, scale: imgScale }}>
-        <motion.img
-          src={gymImages.hero}
-          alt="The training floor at Body Craft gym in Rahim Yar Khan"
-          width={1920}
-          height={1200}
+      <motion.div
+        className="absolute inset-0"
+        style={{ y: imgY, scale: imgScale }}
+        initial={reduce ? { opacity: 0 } : { opacity: 0, scale: 1.12 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 2.2, delay: 1.1, ease: EASE }}
+      >
+        <video
+          src={heroVideo}
+          poster={gymImages.hero}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-label="Training floor footage at Body Craft gym in Rahim Yar Khan"
           className="h-full w-full object-cover"
-          initial={reduce ? { opacity: 0 } : { opacity: 0, scale: 1.18 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 2.2, delay: 1.1, ease: EASE }}
         />
         <div className="absolute inset-0 cine-veil" />
       </motion.div>
+
 
       <motion.div
         style={{ y: textY, opacity: fade }}
@@ -81,16 +89,15 @@ export function Hero() {
             </MagneticButton>
           </div>
 
-          <dl className="flex gap-10">
-            <div>
-              <dt className="eyebrow">Hours</dt>
-              <dd className="display mt-2 text-2xl">{business.hoursShort}</dd>
-            </div>
-            <div>
-              <dt className="eyebrow">Open</dt>
-              <dd className="display mt-2 text-2xl">Daily</dd>
-            </div>
+          <dl className="flex flex-wrap gap-8 md:gap-10">
+            {schedule.map((s) => (
+              <div key={s.window}>
+                <dt className="eyebrow">{s.audience}</dt>
+                <dd className="display mt-2 text-xl md:text-2xl">{s.window}</dd>
+              </div>
+            ))}
           </dl>
+
         </motion.div>
       </motion.div>
 

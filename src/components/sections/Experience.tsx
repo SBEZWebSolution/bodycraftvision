@@ -1,14 +1,15 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useReducedMotion } from "motion/react";
-import { gymImages } from "@/lib/site";
+import { galleryImages } from "@/lib/site";
 import { Reveal } from "../Reveal";
 
 const slides = [
-  { n: "01", label: "Train", src: gymImages.interior02, alt: "Machine and cardio area at Body Craft" },
-  { n: "02", label: "Focus", src: gymImages.training, alt: "A member training under low light at Body Craft" },
-  { n: "03", label: "Push", src: gymImages.equipment, alt: "Loaded barbell on the Body Craft gym floor" },
-  { n: "04", label: "Progress", src: gymImages.detail, alt: "Chalk and knurled steel detail at Body Craft" },
+  { n: "01", label: "Train", src: galleryImages[0], alt: "Dumbbell and weight plate racks on the Body Craft gym floor" },
+  { n: "02", label: "Focus", src: galleryImages[1], alt: "Benches and resistance machines at Body Craft" },
+  { n: "03", label: "Push", src: galleryImages[2], alt: "Bench press station and machines at Body Craft" },
+  { n: "04", label: "Progress", src: galleryImages[3], alt: "Member locker wall at Body Craft" },
 ];
+
 
 /** Pinned cinematic gallery: vertical scroll drives horizontal movement. */
 export function Experience() {

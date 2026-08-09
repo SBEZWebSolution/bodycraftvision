@@ -11,6 +11,7 @@ import { Training } from "@/components/sections/Training";
 import { WordmarkScene } from "@/components/sections/WordmarkScene";
 import { Principles } from "@/components/sections/Principles";
 import { SocialProof } from "@/components/sections/SocialProof";
+import { Facilities } from "@/components/sections/Facilities";
 import { Membership } from "@/components/sections/Membership";
 import { LocationSection } from "@/components/sections/LocationSection";
 import { SiteFooter } from "@/components/sections/SiteFooter";
@@ -99,6 +100,7 @@ function Index() {
         <Principles />
         <SocialProof />
         <Membership />
+        <Facilities />
         <LocationSection />
       </main>
       <SiteFooter />
