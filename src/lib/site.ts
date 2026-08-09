@@ -87,12 +87,16 @@ export const gymImages = {
   detail: gym3.url,
 } as const;
 
+/** Gym experience gallery — authentic photography, in order. */
+export const galleryImages = [gym1.url, gym2.url, gym4.url, gym3.url] as const;
+
 export const navLinks = [
   { label: "Home", href: "#top" },
   { label: "About", href: "#about" },
   { label: "The Gym", href: "#the-gym" },
   { label: "Training", href: "#training" },
   { label: "Membership", href: "#membership" },
+  { label: "Facilities", href: "#facilities" },
   { label: "Contact", href: "#contact" },
 ] as const;
 
