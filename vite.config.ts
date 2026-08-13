@@ -5,6 +5,13 @@
 //     React/TanStack dedupe, error logger plugins, and sandbox detection (port/host/strictPort).
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+import netlify from "@netlify/vite-plugin-tanstack-start";
+
+// Netlify builds (and any local `vite build` outside the Lovable sandbox) use the
+// official Netlify TanStack Start plugin, which emits dist/client + the Netlify
+// server function. Nitro is disabled there so the two deploy adapters don't fight
+// over the build output. Inside Lovable, nitro stays in charge (LOVABLE_NITRO_PRESET).
+const isLovableBuild = Boolean(process.env["LOVABLE_NITRO_PRESET"]);
 
 export default defineConfig({
   tanstackStart: {
@@ -12,4 +19,5 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  ...(isLovableBuild ? {} : { nitro: false as const, plugins: [netlify()] }),
 });
