@@ -1,12 +1,3 @@
 [build]
   command = "vite build"
   publish = "dist/client"
-
-# Media (images/video) live on Lovable's asset CDN, which is served from the
-# Lovable origin. Netlify has no copy of those files, so proxy the asset path
-# through to the Lovable origin instead of returning 404s.
-[[redirects]]
-  from = "/__l5e/assets-v1/*"
-  to = "https://bodycraftvision.lovable.app/__l5e/assets-v1/:splat"
-  status = 200
-  force = true
