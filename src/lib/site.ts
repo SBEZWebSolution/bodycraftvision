@@ -3,12 +3,7 @@
  * Only verified facts live here. Do not add claims that cannot be sourced.
  */
 
-import logoAsset from "@/assets/logo.jpeg.asset.json";
-import heroVideoAsset from "@/assets/hero.mp4.asset.json";
-import gym1 from "@/assets/gym-1.png.asset.json";
-import gym2 from "@/assets/gym-2.png.asset.json";
-import gym3 from "@/assets/gym-3.png.asset.json";
-import gym4 from "@/assets/gym-4.png.asset.json";
+/* Media is served from the deployed site's own /public directory. */
 
 export const business = {
   name: "Body Craft",
