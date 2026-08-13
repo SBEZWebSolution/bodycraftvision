@@ -3,12 +3,7 @@
  * Only verified facts live here. Do not add claims that cannot be sourced.
  */
 
-import logoAsset from "@/assets/logo.jpeg.asset.json";
-import heroVideoAsset from "@/assets/hero.mp4.asset.json";
-import gym1 from "@/assets/gym-1.png.asset.json";
-import gym2 from "@/assets/gym-2.png.asset.json";
-import gym3 from "@/assets/gym-3.png.asset.json";
-import gym4 from "@/assets/gym-4.png.asset.json";
+/* Media is served from the deployed site's own /public directory. */
 
 export const business = {
   name: "Body Craft",
@@ -73,22 +68,27 @@ export const mapsLink = `https://www.google.com/maps/search/?api=1&query=${encod
   business.mapsQuery,
 )}`;
 
-/** Official brand assets (CDN-hosted). */
-export const brandLogo = logoAsset.url;
-export const heroVideo = heroVideoAsset.url;
+/** Official brand assets (served from this site). */
+export const brandLogo = "/images/logo.jpeg";
+export const heroVideo = "/video/hero.mp4";
 
 /** Authentic Body Craft photography. */
 export const gymImages = {
-  hero: gym1.url,
-  interior01: gym4.url,
-  interior02: gym1.url,
-  equipment: gym3.url,
-  training: gym2.url,
-  detail: gym3.url,
+  hero: "/images/gym/hero.jpg",
+  interior01: "/images/gym/interior-01.jpg",
+  interior02: "/images/gym/interior-02.jpg",
+  equipment: "/images/gym/equipment.jpg",
+  training: "/images/gym/training.jpg",
+  detail: "/images/gym/detail.jpg",
 } as const;
 
 /** Gym experience gallery — authentic photography, in order. */
-export const galleryImages = [gym1.url, gym2.url, gym4.url, gym3.url] as const;
+export const galleryImages = [
+  "/images/gym/hero.jpg",
+  "/images/gym/training.jpg",
+  "/images/gym/interior-01.jpg",
+  "/images/gym/equipment.jpg",
+] as const;
 
 export const navLinks = [
   { label: "Home", href: "#top" },
